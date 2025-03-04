@@ -15,7 +15,14 @@ code = {
 
 }
 
-for i in range(len(PI1000DIGITS)//4):
-    first = PI1000DIGITS[i*4]+PI1000DIGITS[i*4+1]
-    second = PI1000DIGITS[i*4+2]+PI1000DIGITS[i*4+3]
-    print(first + second +'  '+ code[first] +" "+ code[second] )
+
+def decomposeNumber(number):
+    for i in range(len(number)//4):
+        first = number[i*4]+number[i*4+1]
+        second = number[i*4+2]+number[i*4+3]
+        print(first + second +'  '+ code[first] +" "+ code[second] )
+    
+
+if __name__ == "__main__":
+    number = input("Please enter the number you want to encode: ")
+    print(decomposeNumber(number))
